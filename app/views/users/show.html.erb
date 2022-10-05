@@ -1,0 +1,19 @@
+<h1>My cocktails</h1>
+<% unless @cocktails.nil? %>
+  <% @cocktails.each do |cocktail| %>
+    <%= cl_image_tag cocktail.photo.key %>
+    <%= cocktail.name %>
+    <%= cocktail.description %>
+  <% end %>
+<% end %>
+
+<h1>My bookings</h1>
+<% unless @bookings.nil? %>
+  <% @bookings.each do |booking| %>
+    <%= cl_image_tag booking.cocktail.photo.key %>
+    <%= booking.date %>
+    <%= booking.cocktail.name %>
+    <%= booking.cocktail.price %>
+    <%= booking.cocktail.description %>
+  <% end %>
+<% end %>
